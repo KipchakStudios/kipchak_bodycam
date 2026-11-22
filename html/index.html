@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kipchak_bodycam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fx">
+        <div class="fx-vignette"></div>
+        <div class="fx-grain"></div>
+        <div class="fx-frame">
+            <i class="corner tl"></i>
+            <i class="corner tr"></i>
+            <i class="corner bl"></i>
+            <i class="corner br"></i>
+        </div>
+        <div class="fx-flash"></div>
+    </div>
+
+    <div id="hud" class="pos-top-right logo-left">
+        <img id="logo" alt="">
+        <div class="block">
+            <div class="row head" data-field="Rec">
+                <span class="rec"><i class="dot"></i><b id="recText">REC</b></span>
+                <span id="modeTag" class="tag" data-field="ModeLabel"></span>
+                <span id="liveTag" class="tag live"></span>
+            </div>
+            <div class="row time" id="time" data-field="DateTime"></div>
+            <div class="row dept" data-field="Department">
+                <b id="deptName"></b><span id="deptSub"></span>
+            </div>
+            <div class="row" data-field="Officer"><span class="lbl" id="lblOfficer"></span><span class="val" id="officer"></span></div>
+            <div class="row" data-field="Badge"><span class="lbl" id="lblBadge"></span><span class="val" id="badge"></span></div>
+            <div class="row dash-only" data-field="Unit"><span class="lbl" id="lblUnit"></span><span class="val" id="unit"></span></div>
+            <div class="row dash-only speed" data-field="Speed"><span class="lbl" id="lblSpeed"></span><span class="val"><b id="speed">0</b> <small id="speedUnit"></small></span></div>
+            <div class="row dash-only status">
+                <span data-field="Lights"><span class="lbl" id="lblLights"></span><span class="val" id="lights"></span></span>
+                <span data-field="Siren"><span class="lbl" id="lblSiren"></span><span class="val" id="siren"></span></span>
+            </div>
+            <div class="row serial" id="serial" data-field="Serial"></div>
+        </div>
+    </div>
+
+    <div id="signal"><span id="signalText"></span></div>
+    <div id="hint"><span class="live-dot"></span><span id="hintIndex"></span><span id="hintText"></span></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

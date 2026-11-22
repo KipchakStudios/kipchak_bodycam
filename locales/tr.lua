@@ -1,0 +1,58 @@
+Locales = Locales or {}
+
+Locales.tr = {
+    notify_on = 'Yaka kamerası açıldı',
+    notify_off = 'Yaka kamerası kapatıldı',
+    notify_resumed = 'Yaka kamerası kayda devam ediyor',
+    notify_item_removed = 'Yaka kamerası kapandı: cihaz üzerinizde değil',
+    notify_dead = 'Yaka kamerası kapandı',
+    notify_cuffed = 'Yaka kamerası kapandı',
+    notify_unauthorized = 'Yaka kamerası kapandı: artık yetkiniz yok',
+    no_permission = 'Bu yaka kamerasını kullanma yetkiniz yok',
+    off_duty = 'Yaka kamerasını kullanmak için görevde olmalısınız',
+
+    liveview_disabled = 'Canlı izleme devre dışı',
+    liveview_no_permission = 'Canlı kamera yayınlarına erişim yetkiniz yok',
+    liveview_off_duty = 'Canlı yayınlara erişmek için görevde olmalısınız',
+    liveview_location = 'Canlı yayınlar için karakol bilgisayarının başında olmalısınız',
+    liveview_vehicle = 'Canlı yayınlara erişmek için araçtan inin',
+    liveview_none = 'Açık yaka kamerası yok',
+    liveview_unavailable = 'Bu kamera yayını kullanılamıyor',
+    liveview_ended = 'Canlı yayın sona erdi',
+    liveview_signal_lost = 'Canlı yayın sona erdi: sinyal kayboldu',
+    liveview_target_off = 'Canlı yayın sona erdi: kamera kapatıldı',
+    being_watched = 'Kameranız canlı izleniyor',
+
+    menu_title = 'Canlı Kamera Yayınları',
+    menu_entry = '%s %s · %s · %s',
+    menu_in_vehicle = 'Araçta',
+    menu_on_foot = 'Yaya',
+
+    cmd_liveview = 'Canlı yaka kamerası yayınlarını aç',
+    keybind_hide = 'Yaka kamerası katmanını gizle veya göster',
+    keybind_dashcam = 'Araç kamerası görünümünü aç/kapat',
+
+    ui_rec = 'KAYIT',
+    ui_dashcam = 'ARAÇ KAMERASI',
+    ui_live = 'CANLI',
+    ui_officer = 'MEMUR',
+    ui_badge = 'ROZET',
+    ui_unit = 'BİRİM',
+    ui_speed = 'HIZ',
+    ui_lights = 'TEPE LAMBASI',
+    ui_siren = 'SİREN',
+    ui_on = 'AÇIK',
+    ui_off = 'KAPALI',
+    ui_kmh = 'KM/SA',
+    ui_mph = 'MPH',
+    ui_hint = '← → YAYIN DEĞİŞTİR     BACKSPACE ÇIKIŞ',
+    ui_no_signal = 'SİNYAL YOK',
+    ui_connecting = 'BAĞLANIYOR',
+
+    log_title_toggle = 'Yaka Kamerası',
+    log_title_view = 'Canlı İzleme',
+    log_on = '**%s** yaka kamerasını açtı (%s)',
+    log_off = '**%s** yaka kamerasını kapattı (%s)',
+    log_view_start = '**%s**, **%s** kamerasını izlemeye başladı',
+    log_view_end = '**%s**, **%s** kamerasını izlemeyi bıraktı'
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="6" y="6" width="88" height="88" rx="20" fill="#2a1416" stroke="#ff5a5a" stroke-width="4"/>
+  <polyline points="16,52 34,52 41,36 50,68 58,44 64,52 84,52" fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="50" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#ff8a8a" letter-spacing="2">EMS</text>
+</svg>

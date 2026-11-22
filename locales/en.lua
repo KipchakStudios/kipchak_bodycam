@@ -1,0 +1,58 @@
+Locales = Locales or {}
+
+Locales.en = {
+    notify_on = 'Body camera activated',
+    notify_off = 'Body camera deactivated',
+    notify_resumed = 'Body camera resumed recording',
+    notify_item_removed = 'Body camera turned off: device removed',
+    notify_dead = 'Body camera turned off',
+    notify_cuffed = 'Body camera turned off',
+    notify_unauthorized = 'Body camera turned off: you are no longer authorized',
+    no_permission = 'You are not authorized to use this body camera',
+    off_duty = 'You must be on duty to use the body camera',
+
+    liveview_disabled = 'Live view is disabled',
+    liveview_no_permission = 'You do not have access to live camera feeds',
+    liveview_off_duty = 'You must be on duty to access live camera feeds',
+    liveview_location = 'You must be at a station terminal to access live feeds',
+    liveview_vehicle = 'Leave the vehicle to access live feeds',
+    liveview_none = 'No active body cameras',
+    liveview_unavailable = 'This camera feed is not available',
+    liveview_ended = 'Live feed ended',
+    liveview_signal_lost = 'Live feed ended: signal lost',
+    liveview_target_off = 'Live feed ended: the camera was turned off',
+    being_watched = 'Your camera is being viewed live',
+
+    menu_title = 'Live Camera Feeds',
+    menu_entry = '%s %s · %s · %s',
+    menu_in_vehicle = 'In vehicle',
+    menu_on_foot = 'On foot',
+
+    cmd_liveview = 'Open live body camera feeds',
+    keybind_hide = 'Hide or show the body camera overlay',
+    keybind_dashcam = 'Toggle dashcam view',
+
+    ui_rec = 'REC',
+    ui_dashcam = 'DASHCAM',
+    ui_live = 'LIVE',
+    ui_officer = 'OFFICER',
+    ui_badge = 'BADGE',
+    ui_unit = 'UNIT',
+    ui_speed = 'SPEED',
+    ui_lights = 'LIGHTS',
+    ui_siren = 'SIREN',
+    ui_on = 'ON',
+    ui_off = 'OFF',
+    ui_kmh = 'KM/H',
+    ui_mph = 'MPH',
+    ui_hint = '← → SWITCH FEED     BACKSPACE EXIT',
+    ui_no_signal = 'NO SIGNAL',
+    ui_connecting = 'CONNECTING',
+
+    log_title_toggle = 'Body Camera',
+    log_title_view = 'Live View',
+    log_on = '**%s** turned the body camera on (%s)',
+    log_off = '**%s** turned the body camera off (%s)',
+    log_view_start = '**%s** started viewing **%s**',
+    log_view_end = '**%s** stopped viewing **%s**'
+}
