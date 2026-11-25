@@ -108,6 +108,7 @@ All options are in `config.lua`. You can turn every feature on or off there.
 | `Config.Framework` | `'auto'` | `'auto'`, `'qbox'`, `'qbcore'` or `'esx'` |
 | `Config.Inventory` | `'auto'` | `'auto'`, `'ox'`, `'qb'` or `'esx'` |
 | `Config.Locale` | `'en'` | `'en'` or `'tr'` |
+| `Config.Debug` | `false` | Test helpers for development servers (see `LiveView.AllowSelfView`). Keep `false` on a live server |
 | `Config.Item` | `'bodycam'` | Item name |
 | `Config.AllowedJobs` | police, sheriff, ambulance = 0 | Job → minimum grade. Leave the table empty (`{}`) so anyone with the item can use it |
 | `Config.RequireOnDuty` | `false` | The player must be on duty to turn the camera on |
@@ -158,13 +159,14 @@ All options are in `config.lua`. You can turn every feature on or off there.
 
 ### Effects
 
-`Config.Effects.Vignette`, `Grain` and `Frame` each have `Enabled` and `Intensity` (0-1). They are pure CSS, with no game post-processing. `Timecycle` applies a game timecycle modifier while the overlay is visible (`Enabled = false` by default, with `Modifier` and `Strength` settings).
+`Config.Effects.Vignette`, `Grain` and `Frame` each have `Enabled` and `Intensity` (0-1). They are pure CSS, with no game post-processing. Grain is off by default; when enabled it is a soft, static texture (`Intensity = 0.05`). `Grain.Animated = true` lets it drift slowly instead of standing still. The live view "no signal" static is shown regardless of this setting. `Timecycle` applies a game timecycle modifier while the overlay is visible (`Enabled = false` by default, with `Modifier` and `Strength` settings).
 
 ### Dashcam
 
 | Option | Default | Description |
 | --- | --- | --- |
 | `Enabled` | `true` | `false` disables dashcam mode entirely |
+| `OverlayMode` | `'camera'` | `'camera'` shows the dashcam overlay (DASHCAM label, speed, lights, siren) only while the dashcam camera (`Camera.Key`) is active, otherwise the normal bodycam overlay. `'vehicle'` shows it whenever the player sits in an eligible vehicle |
 | `VehicleClasses` | `{ 18 }` | Vehicle classes that count as emergency vehicles (18 = emergency) |
 | `Models` | `{}` | Extra model names, for example `{ 'police5', 'fbi2' }` |
 | `SpeedUnit` | `'kmh'` | `'kmh'` or `'mph'` |
@@ -191,7 +193,7 @@ All options are in `config.lua`. You can turn every feature on or off there.
 | `NotifyTarget` | `false` | Tells the watched officer "Your camera is being viewed live" |
 | `Fov`, `BodyOffset`, `BodyPitch` | | Body camera viewpoint used for live view |
 | `SignalTimeout` | `10` | Seconds without the target streamed in before the feed ends |
-| `AllowSelfView` | `false` | **Debug only.** Lets a viewer watch their own camera, which is useful for testing alone |
+| `AllowSelfView` | `false` | **Debug only.** Lists the viewer's own camera so the feature can be tested alone. Only works while `Config.Debug = true`, has no effect otherwise |
 
 Example terminal:
 
@@ -305,6 +307,10 @@ Set `SvConfig.Webhook` in `server/sv_config.lua`. `SvConfig.Logs.Toggle` logs ca
 - Code, placeholder logos and item icon: original work by Kipchak Studios, MIT License (see `LICENSE`)
 - Sounds: generated at runtime with the Web Audio API, no audio files included
 - Fonts: system fonts only, no font files included
+
+## Changelog
+
+- 1.0.1 – Grain effect is off by default and, when enabled, is a softer static texture (`Grain.Animated` for slow movement). New `Config.Dashcam.OverlayMode`: by default the dashcam overlay only shows in the dashcam camera view. `LiveView.AllowSelfView` now needs `Config.Debug = true`.
 
 ## Support
 

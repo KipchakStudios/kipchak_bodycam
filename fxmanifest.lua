@@ -5,7 +5,7 @@ lua54 'yes'
 name 'kipchak_bodycam'
 author 'Kipchak Studios'
 description 'Kipchak Bodycam - Body camera, dashcam overlay and live view for emergency services'
-version '1.0.0'
+version '1.0.1'
 license 'MIT'
 
 ui_page 'html/index.html'

@@ -3,6 +3,7 @@ Config = {}
 Config.Framework = 'auto'
 Config.Inventory = 'auto'
 Config.Locale = 'en'
+Config.Debug = false
 
 Config.Item = 'bodycam'
 
@@ -160,8 +161,9 @@ Config.Effects = {
         Intensity = 0.55
     },
     Grain = {
-        Enabled = true,
-        Intensity = 0.12
+        Enabled = false,
+        Intensity = 0.05,
+        Animated = false
     },
     Frame = {
         Enabled = true,
@@ -176,6 +178,7 @@ Config.Effects = {
 
 Config.Dashcam = {
     Enabled = true,
+    OverlayMode = 'camera',
     VehicleClasses = { 18 },
     Models = {},
     SpeedUnit = 'kmh',
