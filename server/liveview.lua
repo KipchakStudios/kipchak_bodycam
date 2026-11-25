@@ -42,7 +42,7 @@ local function eligible(viewer)
     local bucket = GetPlayerRoutingBucket(viewer)
     local viewerJob = cfg.SameJobOnly and Bridge.GetJob(viewer)
     for _, src in ipairs(Bodycam.GetActive()) do
-        local allowed = src ~= viewer or cfg.AllowSelfView
+        local allowed = src ~= viewer or (cfg.AllowSelfView and Config.Debug == true)
         if allowed and GetPlayerRoutingBucket(src) ~= bucket then allowed = false end
         if allowed and viewerJob then
             local info = Bodycam.GetInfo(src)
