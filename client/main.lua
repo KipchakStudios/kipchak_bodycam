@@ -128,7 +128,7 @@ local function startLoop()
                 local visible = isVisible(ped)
                 local frame = { visible = visible, mode = 'bodycam' }
                 if visible then
-                    local veh = Dashcam.GetVehicle(ped)
+                    local veh = (Config.Dashcam.OverlayMode == 'vehicle' or Dashcam.CameraActive()) and Dashcam.GetVehicle(ped)
                     if veh then
                         frame.mode = 'dashcam'
                         frame.vehicle = Dashcam.GetData(veh, Bodycam.info and Bodycam.info.badge)
