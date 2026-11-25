@@ -14,7 +14,7 @@
     --bc-logo-size: 5.2vh;
     --bc-logo-opacity: 0.9;
     --bc-vignette: 0.55;
-    --bc-grain: 0.12;
+    --bc-grain: 0.05;
     --bc-frame-radius: 4.5vh;
     --bc-frame-outer: rgba(0, 0, 0, 0.8);
     --bc-frame-inner: rgba(0, 0, 0, 0.4);
@@ -89,15 +89,27 @@ body.on.viewer.nosignal #signal {
 #fx .fx-grain {
     inset: -60%;
     opacity: var(--bc-grain);
+    background-image: var(--bc-grain-soft);
     background-repeat: repeat;
-    background-size: 220px 220px;
+    background-size: 256px 256px;
     mix-blend-mode: overlay;
-    animation: grain 0.7s steps(7) infinite;
-    will-change: transform;
+}
+
+body.grain-off #fx .fx-grain {
+    display: none;
+}
+
+body.grain-animated #fx .fx-grain {
+    animation: grain-drift 12s steps(4) infinite;
 }
 
 body.nosignal #fx .fx-grain,
 body.switching #fx .fx-grain {
+    display: block;
+    background-image: var(--bc-grain-static);
+    background-size: 220px 220px;
+    animation: grain 0.7s steps(7) infinite;
+    will-change: transform;
     opacity: 0.6;
     mix-blend-mode: normal;
 }
@@ -411,6 +423,14 @@ body.viewer .tag.live {
 @keyframes flash {
     0% { opacity: 0.35; }
     100% { opacity: 0; }
+}
+
+@keyframes grain-drift {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2%, 1%); }
+    50% { transform: translate(1%, -2%); }
+    75% { transform: translate(2%, 2%); }
+    100% { transform: translate(0, 0); }
 }
 
 @keyframes grain {

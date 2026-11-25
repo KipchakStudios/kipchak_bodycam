@@ -50,22 +50,26 @@
         return `${folder}/${file}`;
     };
 
-    const makeGrain = () => {
-        const size = 220;
+    const noiseTexture = (size, low, high) => {
         const canvas = document.createElement('canvas');
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext('2d');
         const img = ctx.createImageData(size, size);
         for (let i = 0; i < img.data.length; i += 4) {
-            const v = Math.random() * 255;
+            const v = low + Math.random() * (high - low);
             img.data[i] = v;
             img.data[i + 1] = v;
             img.data[i + 2] = v;
             img.data[i + 3] = 255;
         }
         ctx.putImageData(img, 0, 0);
-        document.querySelector('.fx-grain').style.backgroundImage = `url(${canvas.toDataURL('image/png')})`;
+        return `url(${canvas.toDataURL('image/png')})`;
+    };
+
+    const makeGrain = () => {
+        root.setProperty('--bc-grain-soft', noiseTexture(128, 88, 168));
+        root.setProperty('--bc-grain-static', noiseTexture(220, 0, 255));
     };
 
     const loadCustomFont = (custom) => {
@@ -110,8 +114,8 @@
         el('fx').querySelector('.fx-vignette').style.display = fx.Vignette.Enabled ? '' : 'none';
         root.setProperty('--bc-vignette', clamp(fx.Vignette.Intensity, 0, 1));
 
-        const grain = document.querySelector('.fx-grain');
-        grain.style.display = fx.Grain.Enabled ? '' : 'none';
+        document.body.classList.toggle('grain-off', !fx.Grain.Enabled);
+        document.body.classList.toggle('grain-animated', !!fx.Grain.Animated);
         root.setProperty('--bc-grain', clamp(fx.Grain.Intensity, 0, 1));
 
         const frame = document.querySelector('.fx-frame');
